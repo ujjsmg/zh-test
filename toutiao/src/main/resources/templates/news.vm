@@ -1,0 +1,20 @@
+<html>
+<body>
+<p>
+    ## this line can not be seen.
+    $value
+    <br>
+    #foreach($l in $list)
+    $foreach.index:$l
+    #end
+    <br>
+    $user.name
+    <br>
+    $user.getName()
+    <br>
+    #set($title = "myheader")
+    #include("header.vm")
+    #parse("header.vm")
+</p>
+</body>
+</html>
