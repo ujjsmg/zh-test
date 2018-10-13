@@ -84,8 +84,9 @@ public class IndexController {
     public RedirectView redirect(@PathVariable("code") int code,
                                  HttpSession session){
         RedirectView redirectView = new RedirectView("/",true);
-        if(code == 301)
+        if(code == 301) {
             redirectView.setStatusCode(HttpStatus.PERMANENT_REDIRECT);
+        }
         session.setAttribute("redirect", "from redirect");
         return redirectView;
     }
@@ -93,8 +94,9 @@ public class IndexController {
     @RequestMapping(value = {"/admin"})
     @ResponseBody
     public String admin(@RequestParam(value = "key", required = false) String key){
-        if(key.equals("admin"))
+        if("admin".equals(key)) {
             return "Hello Admin!";
+        }
         throw new IllegalArgumentException("Key is wrong!!");
     }
 
